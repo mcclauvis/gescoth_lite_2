@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name' : 'GescoTh',
+    'name' : 'GescoTh lite',
     'version' : '1.2.0',
     'summary' : """
        Module de gestion complète des école secondaires officielles ou privées
@@ -58,7 +58,5 @@
     'installable' : True,
     'application' : True,
     'auto_install' : False,
-    'price':200.99,
-    'currency':'EUR',
     'license' : 'AGPL-3',
 }

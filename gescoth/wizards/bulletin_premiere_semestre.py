@@ -3,7 +3,6 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 from .. functions.myFunctions import *
 from math import *
-import qrcode
 import os
 
 
@@ -41,8 +40,6 @@ class GescothBulletinPremierSemestre(models.TransientModel):
 			raise ValidationError(_("Pas encore d'élève dans cette classe !"))
 
 		for el in eleve_ids:
-			qrcodepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../static/images')
-			my_qrcode = qrcode.make(el.name).save(qrcodepath + '/qrcode' + str(el.id) + '.png','png')
 			eleve = {
 				'id':el.id,
 				'nom_eleve': el.nom_eleve,
@@ -51,7 +48,6 @@ class GescothBulletinPremierSemestre(models.TransientModel):
 				'statut':el.statut,
 				'Apt_sport':el.Apt_sport,
 				'saison':'Premiere semestre',
-				'qrcode': (qrcodepath + '/qrcode' + str(el.id) + '.png').replace(' ','%20'),
 				'conduite':el.afficher_conduite(self.annee_scolaire_id.id,'s1'),
 			}
 

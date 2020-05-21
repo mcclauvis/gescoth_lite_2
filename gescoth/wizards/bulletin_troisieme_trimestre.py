@@ -4,7 +4,6 @@ from odoo.exceptions import ValidationError
 from odoo.modules.module import get_module_resource
 from .. functions.myFunctions import *
 from math import *
-import qrcode
 
 
 class GescothBulletinPremierSemestre(models.TransientModel):
@@ -47,7 +46,6 @@ class GescothBulletinPremierSemestre(models.TransientModel):
 				'Apt_sport':el.Apt_sport,
 				'statut':el.statut,
 				'saison':'Premiere trimestre',
-				'qrcode': qrcode.make(el.name),
 				'conduite':el.afficher_conduite(self.annee_scolaire_id.id,'s3'),
 			}
 			el_note_ids = self.env['gescoth.note'].search([('eleve_id','=', el.id),('saison','=','s3'),('annee_scolaire','=', self.annee_scolaire_id.id)])
