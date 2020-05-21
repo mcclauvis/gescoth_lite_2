@@ -183,7 +183,7 @@
 	<data>
 		<record id="annee_scolaire" model="gescoth.anneescolaire">
 			<field name="name">2020-2021</field>
-			<field name="date_rentree">20/09/2020</field>
+			<field name="date_rentree">2020-11-11</field>
 		</record>
 	</data>
 	<data>
